@@ -19,6 +19,7 @@ func check(e error) {
 }
 
 func StartHandlers() *http.ServeMux {
+    fmt.Println("hello")
 	mux := http.NewServeMux()
 	mux.HandleFunc("/", GetIndex)
 	mux.Handle("/static/", http.StripPrefix("/static/", http.FileServer(http.Dir("static"))))
